@@ -1,8 +1,13 @@
 <template>
   <div class="app">
-    <button @click="handleClick('title')">Order by Title</button>
-    <button @click="handleClick('salary')">Order by Salary</button>
-    <button @click="handleClick('location')">Order by Location</button>
+    <header>
+      <div class="order">
+        <button @click="handleClick('title')">Order by Title</button>
+        <button @click="handleClick('salary')">Order by Salary</button>
+        <button @click="handleClick('location')">Order by Location</button>
+      </div>
+    </header>
+
     <JobList :jobs="jobs" :order="order" />
   </div>
 </template>
@@ -53,8 +58,8 @@ export default defineComponent({
 
     return {
       jobs,
-      handleClick,
       order,
+      handleClick,
     };
   },
 });
